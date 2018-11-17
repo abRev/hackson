@@ -53,6 +53,13 @@ setInterval(function ping() {
     }
   }, 1000);
 
+
+setInterval(function(){
+    Game.count().exec((err,data) => {
+        if (err) console.log(err);
+        length = data;
+    })
+},1000);
 setInterval(function(){
     console.log('insert');
     if (length == 0) {
@@ -90,4 +97,4 @@ setInterval(function(){
             index++;
         })
     }
-},1000*5)
+},1000*10)
